@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
+/**
+ * Sistema de diseño — Marcos Vega
+ * Paleta derivada de la fotografía de 75 Puñaladas: negro de caja escénica,
+ * off-white de luz de sala y un ámbar cálido tomado de la luz de escena.
+ * El acento es provisional hasta aprobar identidad visual (CLAUDE.md §12).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: #0a0a0b;
+  --color-surface: #141416;
+  --color-foreground: #f4f1ea;
+  --color-muted: #8f8a80;
+  --color-accent: #e0a13a;
+  --color-accent-strong: #f2b44e;
+
+  --space-section: clamp(5rem, 12vw, 10rem);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-fg: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Evita el salto bajo el header al usar anchors. */
+  scroll-padding-top: 5rem;
+  /* Debe ir en <html>, no solo en <body>: si el desbordamiento escapa hasta
+     el elemento raíz, los elementos `fixed` se anclan a ese ancho mayor y
+     quedan parcialmente fuera de pantalla en mobile. */
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Tipografía display: títulos grandes, apretados y expresivos. */
+.display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: var(--font-display), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* Foco visible en todo elemento interactivo (CLAUDE.md §28). */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Estado inicial de los elementos animados por GSAP.
+   Solo se oculta cuando el documento marca que JS está activo: si el script
+   falla o está deshabilitado, el contenido permanece visible en lugar de
+   quedar en negro. La clase la añade el propio script (ver layout). */
+.js [data-animate] {
+  opacity: 0;
+}
+
+/**
+ * Reduced motion — el contenido SIEMPRE queda visible.
+ * Se desactiva smooth scroll, se anulan transiciones y se revela lo animado.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js [data-animate],
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
