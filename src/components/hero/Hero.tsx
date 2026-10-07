@@ -2,7 +2,7 @@ import Link from "next/link";
 
 /**
  * Hero — primera pantalla (CLAUDE.md §4).
- * Imagen full bleed con la caracterización del viejito de 75 Puñaladas,
+ * Imagen full bleed con la caracterización del mayordomo de 75 Puñaladas,
  * que conecta directamente con el reel. Sin animación de entrada bloqueante:
  * el texto es HTML servido, visible de inmediato.
  */
@@ -22,7 +22,7 @@ export function Hero() {
           />
           <img
             src="/images/hero/marcos-vega-hero-01.webp"
-            alt="Marcos Vega caracterizado como un anciano de bombín, bigote y lentes, sujetado por otro personaje en una escena de la obra de teatro 75 Puñaladas."
+            alt="Marcos Vega caracterizado como mayordomo de bombín, bigote y lentes, sujetado por otro personaje en una escena de la obra de teatro 75 Puñaladas."
             fetchPriority="high"
             decoding="async"
             className="h-full w-full object-cover object-[58%_18%] sm:object-center"

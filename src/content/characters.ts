@@ -16,13 +16,13 @@ export type Character = {
  */
 export const characters: Character[] = [
   {
-    slug: "el-viejito",
-    name: "El Viejito",
+    slug: "el-mayordomo",
+    name: "El Mayordomo",
     production: "75 Puñaladas",
     category: "Comedia · Caracterización",
-    image: "/images/personajes/personaje-viejito-01.webp",
-    alt: "Marcos Vega caracterizado como un anciano de bombín, bigote y moño, en una escena de la obra 75 Puñaladas.",
-    note: "Personaje de edad avanzada con caracterización completa: bombín, bigote y lentes.",
+    image: "/images/personajes/personaje-mayordomo-01.webp",
+    alt: "Marcos Vega caracterizado como mayordomo de bombín, bigote y moño, en una escena de la obra 75 Puñaladas.",
+    note: "Mayordomo con caracterización completa: bombín, bigote y lentes.",
   },
   {
     slug: "la-momia",

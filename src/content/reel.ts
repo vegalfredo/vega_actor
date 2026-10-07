@@ -9,7 +9,7 @@
  * `aspect` y `duration` — el componente no necesita cambios.
  */
 export const reel = {
-  title: "Monólogo — El Viejito",
+  title: "Monólogo — El Mayordomo",
   src: "/videos/reel/marcos-vega-reel-monologo.mp4",
   poster: "/videos/reel/marcos-vega-reel-poster.webp",
   duration: "01:53",
@@ -17,7 +17,7 @@ export const reel = {
   aspect: "vertical" as const,
   tags: ["Actor", "Comediante", "Caracterización", "Monólogo"],
   caption:
-    "Muestra de trabajo actoral: construcción del personaje del viejito a partir de voz, ritmo y cuerpo.",
+    "Muestra de trabajo actoral: construcción del personaje del mayordomo a partir de voz, ritmo y cuerpo.",
 } as const;
 
 /** Escenas de teatro con público, como material de apoyo al reel. */
