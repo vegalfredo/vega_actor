@@ -43,6 +43,14 @@ export function Contact() {
           >
             Instagram
           </a>
+          <a
+            href={contact.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-[var(--color-foreground)]/35 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest transition-colors hover:border-[var(--color-foreground)]"
+          >
+            Facebook
+          </a>
         </div>
       </Reveal>
     </section>

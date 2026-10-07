@@ -21,14 +21,15 @@ export const site = {
  */
 export const contact = {
   whatsapp: {
-    // PENDIENTE: número real. Formato: 52 + LADA + número (ej. "524421234567")
-    number: "520000000000",
+    // Formato: 52 + LADA + número, sin signos ni espacios.
+    number: "524425713606",
     message: "Hola Marcos, te contacto por un casting.",
   },
   // PENDIENTE: correo real
   email: "contacto@marcosvega.com",
   // PENDIENTE: usuario real de Instagram (sin @)
   instagram: "marcosvega",
+  facebook: "https://www.facebook.com/marcosalfredo.81unam/",
 } as const;
 
 export const whatsappUrl = `https://wa.me/${contact.whatsapp.number}?text=${encodeURIComponent(
