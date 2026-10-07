@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { castingSheet, contact, site, whatsappUrl } from "@/content/site";
+import { castingSheet, site, whatsappUrl } from "@/content/site";
 import { ReelPlayer } from "@/components/reel/ReelPlayer";
 import { characters } from "@/content/characters";
 
@@ -92,12 +92,6 @@ export default function CastingPage() {
               className="rounded-full bg-[var(--color-accent)] px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-[#141416] transition-colors hover:bg-[var(--color-accent-strong)]"
             >
               Contactar por WhatsApp
-            </a>
-            <a
-              href={`mailto:${contact.email}`}
-              className="rounded-full border border-[var(--color-foreground)]/35 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest transition-colors hover:border-[var(--color-foreground)]"
-            >
-              Enviar correo
             </a>
             <Link
               href="/"

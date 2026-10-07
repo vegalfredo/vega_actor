@@ -30,12 +30,6 @@ export function Contact() {
             Hablar por WhatsApp
           </a>
           <a
-            href={`mailto:${contact.email}`}
-            className="rounded-full border border-[var(--color-foreground)]/35 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest transition-colors hover:border-[var(--color-foreground)]"
-          >
-            Enviar correo
-          </a>
-          <a
             href={`https://instagram.com/${contact.instagram}`}
             target="_blank"
             rel="noopener noreferrer"

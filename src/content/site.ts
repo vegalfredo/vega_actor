@@ -25,8 +25,6 @@ export const contact = {
     number: "524425713606",
     message: "Hola Marcos, te contacto por un casting.",
   },
-  // PENDIENTE: correo real
-  email: "contacto@marcosvega.com",
   // PENDIENTE: usuario real de Instagram (sin @)
   instagram: "marcosvega",
   facebook: "https://www.facebook.com/marcosalfredo.81unam/",
